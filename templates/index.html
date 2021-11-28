@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<style>
+  table {
+    width: 50%;
+    margin-left: 5%;
+    border: 1px solid black;
+  }
+  th,td {
+      border: 1px solid black;
+      padding-left: 2%;
+  }
+  th{
+    background-color: #04AA6D;
+    color: white;
+    height: 40px;
+  }
+    </style>
+<div class="container my-3">
+  <form method="POST">
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">State name</label>
+      <input type="text" class="form-control" id="validationCustom01" name="state" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">District name</label>
+      <input type="text" class="form-control" id="validationCustom02" name="district" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom03" class="form-label">Season name</label>
+      <input type="text" class="form-control" name="season" id="validationCustom03" required>
+    </div>
+    <div class="col-12 my-3">
+      <button class="btn btn-primary" value="submit" type="submit">Predict</button>
+    </div>
+  </form>
+</div>
+<div>
+  <table style="background-color: white;border: 1px solid black;">
+    <tr>
+      <th>Crop Name</th>
+      <th>Amount(Tons)</th>
+    </tr>
+    {% for key in detail %}
+    <tr>
+    <td> {{key}} </td>
+    <td> {{detail[key]}} </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+        -->
+
+{% endblock body %}

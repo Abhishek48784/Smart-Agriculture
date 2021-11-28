@@ -1,0 +1,15 @@
+footer {
+    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .card {
+    margin-top: 2%;
+    margin-left: 5%;
+    padding: 14px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px #ccc;
+    background-color: lightcyan;
+  }
